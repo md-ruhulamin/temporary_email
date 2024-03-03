@@ -18,8 +18,7 @@ class AuthController extends GetxController {
     'Accept': 'application/ld+json',
     'Content-Type': 'application/json',
   };
-  //email:"ruhul@yogirt.com"
-  //password :ruhul
+
 
   Future<void> createAccount(
       {required String email,
