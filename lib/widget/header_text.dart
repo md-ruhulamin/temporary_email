@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 
 class ScreenHeaderText extends StatelessWidget {
   final String text;
@@ -12,7 +13,7 @@ class ScreenHeaderText extends StatelessWidget {
      text,
       textAlign: TextAlign.right,
  
-      style: const TextStyle(color: Colors.white, fontSize: 18),
+      style:  TextStyle(color: Colors.white, fontSize: AppDimensions.font17),
     );
   }
 }

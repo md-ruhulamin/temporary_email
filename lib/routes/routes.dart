@@ -16,7 +16,7 @@ class MyRoute {
   static final routes = [
       GetPage(
       name: initial,
-      transition: Transition.leftToRight,
+      transition: Transition.zoom,
       page: () => const SplashScreen(),
     ),
     GetPage(

@@ -15,7 +15,7 @@ class MessageController extends GetxController {
         jsonDecode(jsonStr)['hydra:member'].cast<Map<String, dynamic>>();
     return parsed.map<Message>((json) => Message.fromJson(json)).toList();
   }
-
+  
   Future<void> loadallMessage() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? jsonString = prefs.getString('userinfo');

@@ -1,5 +1,6 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 import 'package:temp_email/utils/color.dart';
 import 'package:temp_email/controller/domain_controller.dart';
 import 'package:temp_email/widget/custom_text.dart';
@@ -33,23 +34,23 @@ class _DomainScreenState extends State<DomainScreen> {
         children: [
             Container(height: 1,color: Colors.grey,),
           HeaderSection(heading:"Available Diomain"),
-          const SizedBox(
-            height: 5,
+           SizedBox(
+            height:  AppDimensions.w5 ,
           ),
           Padding(
-              padding: const EdgeInsets.all(10.0),
+              padding:  EdgeInsets.all(AppDimensions.h10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Container(
-                      margin: const EdgeInsets.only(left: 5),
+                      margin:  EdgeInsets.only(left: AppDimensions.w10),
                       child: BigText(
-                        text: "Tap to create account ot login",
-                        size: 16,
+                        text: "Domains List",
+                        size: AppDimensions.font20,
                         color: Colors.blue,
                       )),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height: AppDimensions.h10,
                   ),
                 ],
               )),
@@ -62,24 +63,24 @@ class _DomainScreenState extends State<DomainScreen> {
                   itemCount: domainController.domains.length,
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      margin: EdgeInsets.symmetric(horizontal: AppDimensions.w15,),
                       decoration: BoxDecoration(
                           color: Colors.green,
-                          borderRadius: BorderRadius.circular(10)),
-                      padding: EdgeInsets.all(10),
+                          borderRadius: BorderRadius.circular(AppDimensions.h10,)),
+                      padding: EdgeInsets.all(AppDimensions.h20,),
                       child: Row(
                         children: [
                           Icon(
                             Icons.domain,
                             color: Colors.white,
-                            size: 20,
+                            size: AppDimensions.w20 ,
                           ),
                           SizedBox(
                             width: 5,
                           ),
                           BigText(
                             text: domainController.domains[index].domain,
-                            size: 17,
+                            size: AppDimensions.font20,
                             color: Colors.white,
                           ),
                           Spacer(),
@@ -95,7 +96,7 @@ class _DomainScreenState extends State<DomainScreen> {
                             child: Icon(
                               Icons.arrow_forward_ios,
                               color: Colors.white,
-                              size: 20,
+                              size:  AppDimensions.w20 ,
                             ),
                           ),
                         ],

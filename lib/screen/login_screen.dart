@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 import 'package:temp_email/utils/color.dart';
 import 'package:temp_email/controller/auth_controller.dart';
 import 'package:temp_email/controller/validation_controller.dart';
@@ -59,27 +60,27 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             Container(color: Colors.grey,height: 1,),
             const HeaderSection(heading: "Login"),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height:  AppDimensions.h20 ,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding:  EdgeInsets.symmetric(horizontal:  AppDimensions.w10 ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Icon(
+                   Icon(
                     Icons.lock,color: Colors.blue,
-                    size: 70,
+                    size:  AppDimensions.w70 ,
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height:  AppDimensions.h20
                   ),
                   BigText(
                     text: "Welcome back you,ve been missed",
-                    size: 17,
+                    size:  AppDimensions.font17 ,
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height:  AppDimensions.h20 ,
                   ),
                   Form(
                       key: _formKey,
@@ -102,8 +103,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                           : null,
                                       hintText: 'Enter Email',
                                       hintStyle: GoogleFonts.workSans(
-                                        textStyle: const TextStyle(
-                                            fontSize: 15,
+                                        textStyle:  TextStyle(
+                                            fontSize:  AppDimensions.font15 ,
                                             fontWeight: FontWeight.normal),
                                       ),
                                     ),
@@ -121,8 +122,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                   ),
                                 ),
                               ]),
-                          const SizedBox(
-                            height: 10,
+                           SizedBox(
+                            height:  AppDimensions.h10,
                           ),
                           Obx(
                             () => TextFormField(
@@ -156,8 +157,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                         : null,
                                 hintText: 'Enter Password',
                                 hintStyle: GoogleFonts.workSans(
-                                  textStyle: const TextStyle(
-                                      fontSize: 15,
+                                  textStyle:  TextStyle(
+                                      fontSize:  AppDimensions.font15,
                                       fontWeight: FontWeight.normal),
                                 ),
                               ),
@@ -173,8 +174,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               onChanged: validationController.validatePassword,
                             ),
                           ),
-                          const SizedBox(
-                            height: 30,
+                           SizedBox(
+                            height:  AppDimensions.h20*1.5,
                           ),
                         ],
                       )),
@@ -188,22 +189,24 @@ class _LoginScreenState extends State<LoginScreen> {
                         }
                       },
                       child: const RoundButton(text: "Login")),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height: AppDimensions.h10
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: GestureDetector(
                       child: Text.rich(TextSpan(children: [
-                        const TextSpan(
+                         TextSpan(
                             text: "Don't have an account ? ",
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 15,
+                              fontSize: AppDimensions.font15,
                             )),
                         TextSpan(
+                           
                           text: "Create now",
-                          style: const TextStyle(
+                          style:  TextStyle(
+                            fontSize:  AppDimensions.font15,
                             color: Colors.blue,
                           ),
                           recognizer: TapGestureRecognizer()

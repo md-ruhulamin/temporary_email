@@ -1,6 +1,7 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 
 class BigText extends StatelessWidget {
   final Color? color;
@@ -22,7 +23,7 @@ class BigText extends StatelessWidget {
       maxLines: 1,
       overflow: overflow,
       style: TextStyle(
-          fontSize: size == 0 ? 20 : size,
+          fontSize: size == 0 ? AppDimensions.font20 : size,
           color: color,
           fontWeight: FontWeight.w400,
          ),

@@ -1,5 +1,4 @@
 // ignore_for_file: dead_code, avoid_print, unused_local_variable, depend_on_referenced_packages
-
 import 'dart:convert';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as https;

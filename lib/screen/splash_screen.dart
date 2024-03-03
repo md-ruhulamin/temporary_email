@@ -1,9 +1,10 @@
-// ignore_for_file: depend_on_referenced_packages
+
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:temp_email/controller/domain_controller.dart';
+import 'package:temp_email/responsive/dimension.dart';
 import 'package:temp_email/utils/api.dart';
 import 'package:temp_email/widget/custom_button.dart';
 
@@ -41,58 +42,58 @@ class _SplashScreenState extends State<SplashScreen> {
       child: Center(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(AppDimensions.w10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                    padding: const EdgeInsets.only(top: 20),
-                    child: const Text("Welcome to Temporary Email..",
+                    padding:  EdgeInsets.only(top: AppDimensions.h10),
+                    child:  Text("Welcome to Temporary Email..",
                         style: TextStyle(
-                          fontSize: 22,
+                          fontSize: AppDimensions.font25,
                           color: Colors.green,
                         ))),
-                const SizedBox(
-                  height: 20,
+                 SizedBox(
+                  height:  AppDimensions.h20,
                 ),
                 SizedBox(
-                  width: 300,
-                  height: 300,
+                  width:  AppDimensions.w100 *3,
+                  height: AppDimensions.h100*3,
                   child: Image.asset("assets/images/loading_email.gif"),
                 ),
-                const SizedBox(
-                  height: 40,
+                 SizedBox(
+                  height:  AppDimensions.h25,
                 ),
-                const Row(
+                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
                       "Protect Your Privacy .",
                       style: TextStyle(
-                        fontSize: 18,
+                        fontSize:  AppDimensions.font17,
                         color: Color.fromARGB(255, 112, 108, 108),
                       ),
                     ),
                     Text(" Avoid Spam",
                         style: TextStyle(
-                          fontSize: 18,
+                          fontSize: AppDimensions.font17,
                           color: Colors.red,
                         )),
                   ],
                 ),
-                const SizedBox(
-                  height: 10,
+              SizedBox(
+                  height: AppDimensions.h15,
                 ),
-                const Text(
+                 Text(
                     "It's time to Check your inbox. Someone may be looking for you ",
                     textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: 13,
+                      fontSize: AppDimensions.font15,
                       color: Colors.grey,
                     )),
-                const SizedBox(
-                  height: 10,
+                SizedBox(
+                  height: AppDimensions.h15,
                 ),
                 GestureDetector(
                     onTap: () {

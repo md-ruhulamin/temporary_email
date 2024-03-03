@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 import 'package:temp_email/utils/color.dart';
 import 'package:temp_email/controller/auth_controller.dart';
 import 'package:temp_email/controller/validation_controller.dart';
@@ -25,6 +26,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
   TextEditingController passwordController = TextEditingController();
   var authcontroller = Get.put(AuthController());
   @override
+
+
+
   void initState() {
     super.initState();
   }
@@ -58,38 +62,29 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             const HeaderSection(
               heading: "Create New Account",
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height: AppDimensions.h10
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
+              padding:  EdgeInsets.symmetric(horizontal: AppDimensions.w10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  // Container(
-                  //     margin: const EdgeInsets.only(left: 5),
-                  //     child: BigText(
-                  //       text: "Tap to create account ot login",
-                  //       size: 16,
-                  //       color: Colors.blue,
-                  //     )),
-                  // const SizedBox(
-                  //   height: 20,
-                  // ),
-                  const Icon(
+               
+                   Icon(
                     Icons.lock,
                     color: Colors.blue,
-                    size: 70,
+                    size: AppDimensions.w70  
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height:  AppDimensions.h10 ,
                   ),
                   BigText(
                     text: "Let's create an accouont for you",
-                    size: 17,
+                    size: AppDimensions.font17,
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height:  AppDimensions.h10,
                   ),
 
                   Form(
@@ -113,8 +108,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                           : null,
                                       hintText: 'Enter Email  Address',
                                       hintStyle: GoogleFonts.workSans(
-                                        textStyle: const TextStyle(
-                                            fontSize: 15,
+                                        textStyle:  TextStyle(
+                                            fontSize:  AppDimensions.font15,
                                             fontWeight: FontWeight.normal),
                                       ),
                                     ),
@@ -136,20 +131,21 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                 ),
                                 Container(
                                   decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(10),
+                                    borderRadius: BorderRadius.circular( AppDimensions.w10),
                                     color: Colors.white.withOpacity(0.9),
                                   ),
-                                  padding: const EdgeInsets.symmetric(
-                                      horizontal: 10, vertical: 12),
+                                  padding:  EdgeInsets.symmetric(
+                                      horizontal:  AppDimensions.w15, vertical:  AppDimensions.w13 ,),
                                   child: Text(
                                     "@$domain",
-                                    style: const TextStyle(
+                                    style:  TextStyle(
+                                      fontSize:  AppDimensions.font15,
                                         fontWeight: FontWeight.w900),
                                   ),
                                 ),
                               ]),
-                          const SizedBox(
-                            height: 10,
+                           SizedBox(
+                            height:  AppDimensions.h10 ,
                           ),
                           Obx(
                             () => TextFormField(
@@ -183,8 +179,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                         : null,
                                 hintText: 'Enter Password',
                                 hintStyle: GoogleFonts.workSans(
-                                  textStyle: const TextStyle(
-                                      fontSize: 15,
+                                  textStyle:  TextStyle(
+                                      fontSize: AppDimensions.font15,
                                       fontWeight: FontWeight.normal),
                                 ),
                               ),
@@ -200,13 +196,13 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                               onChanged: validationController.validatePassword,
                             ),
                           ),
-                          const SizedBox(
-                            height: 10,
+                           SizedBox(
+                            height:  AppDimensions.h10 ,
                           ),
                         ],
                       )),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height: AppDimensions.h20 ,
                   ),
                   GestureDetector(
                       onTap: () {
@@ -218,18 +214,18 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                         }
                       },
                       child: const RoundButton(text: "Create")),
-                  const SizedBox(
-                    height: 20,
+                   SizedBox(
+                    height:  AppDimensions.h10 ,
                   ),
                   Align(
                     alignment: Alignment.center,
                     child: GestureDetector(
                       child: Text.rich(TextSpan(children: [
-                        const TextSpan(
+                         TextSpan(
                             text: "Already have an account? ",
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 15,
+                              fontSize:  AppDimensions.font15,
                             )),
                         TextSpan(
                             recognizer: TapGestureRecognizer()
@@ -238,9 +234,9 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                                     arguments: {"domain": domain});
                               },
                             text: "Login",
-                            style: const TextStyle(
+                            style:  TextStyle(
                               color: Colors.blue,
-                              fontSize: 15,
+                              fontSize:  AppDimensions.font15,
                             ))
                       ])),
                     ),

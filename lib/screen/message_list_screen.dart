@@ -2,6 +2,7 @@
 
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:temp_email/responsive/dimension.dart';
 import 'package:temp_email/utils/color.dart';
 import 'package:temp_email/controller/auth_controller.dart';
 import 'package:temp_email/controller/message_controller.dart';
@@ -25,7 +26,6 @@ class _MessageListScreenState extends State<MessageListScreen> {
     authcontroller.loaduserinfo();
     messageController.loadallMessage();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +39,7 @@ class _MessageListScreenState extends State<MessageListScreen> {
                 },
                 child: Icon(Icons.logout)),
             SizedBox(
-              width: 10,
+              width: AppDimensions.w10,
             )
           ],
           iconTheme: IconThemeData(color: Colors.white),
@@ -56,36 +56,37 @@ class _MessageListScreenState extends State<MessageListScreen> {
                 width: double.infinity,
                 decoration: const BoxDecoration(),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Container(
-                        height: 40,
+                  
                         width: double.infinity,
                         decoration: const BoxDecoration(
                           color: Colors.blue,
                         ),
-                        padding: EdgeInsets.all(5),
+                        padding: EdgeInsets.all(AppDimensions.w5),
                         child: Obx(() =>
                             ScreenHeaderText(text: authcontroller.userEmial))),
                     Container(
                       width: double.infinity,
-                      height: 20,
-                      decoration: const BoxDecoration(
+                      height: AppDimensions.h20,
+                      decoration:  BoxDecoration(
                           color: Colors.blue,
                           borderRadius: BorderRadius.only(
-                              bottomLeft: Radius.circular(50))),
+                              bottomLeft: Radius.circular(AppDimensions.h20*2.5))),
                     ),
                     Container(
                       color: Colors.blue,
                       child: Container(
-                        padding: EdgeInsets.symmetric(horizontal: 20,vertical: 10),
+                        padding: EdgeInsets.symmetric(horizontal:  AppDimensions.w15,vertical:  AppDimensions.h5),
                         
                         decoration: BoxDecoration(
                             color: AppColors().backgroundColor,
                             borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(50))),
+                                topRight: Radius.circular(AppDimensions.h20*2.5))),
                         width: double.infinity,
                         child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Obx(
@@ -105,30 +106,10 @@ class _MessageListScreenState extends State<MessageListScreen> {
                     ),
                   ],
                 )),
-            // Padding(
-            //   padding: const EdgeInsets.symmetric(horizontal: 15),
-            //   child: Align(
-            //       alignment: Alignment.bottomLeft,
-            //       child: Row(
-            //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //         children: [
-            //           Obx(
-            //             () => BigText(
-            //                 text:
-            //                     "Message  (${messageController.messageList.length.toString()})"),
-            //           ),
-            //           IconButton(
-            //             icon: Icon(Icons.refresh),
-            //             onPressed: () {
-            //               messageController.loadallMessage();
-            //             },
-            //           ),
-            //         ],
-            //       )),
-            // ),
+           
             Expanded(child: Obx(() {
               if (messageController.messageList.isEmpty) {
-                return Center(child: Text("Loading"));
+                return Center(child: CircularProgressIndicator());
               } else {
                 return ListView.builder(
                     itemCount: messageController.messageList.length,
@@ -165,14 +146,14 @@ class MessageCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      margin: EdgeInsets.symmetric(horizontal: AppDimensions.w10, vertical:  AppDimensions.h5),
       decoration: BoxDecoration(
           color: Colors.white.withOpacity(0.9),
           boxShadow: [
             BoxShadow(offset: Offset(-1, -1), blurRadius: 2, color: Colors.grey)
           ],
-          borderRadius: BorderRadius.circular(10)),
-      padding: EdgeInsets.all(10),
+          borderRadius: BorderRadius.circular( AppDimensions.w10)),
+      padding: EdgeInsets.all( AppDimensions.h10),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         MessageInfo(
           sub: "From",
@@ -216,7 +197,7 @@ class MessageInfo extends StatelessWidget {
         children: [
           Text(
             sub,
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
+            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue,fontSize: AppDimensions.font15),
           ),
           Text(subtetxt),
         ],
