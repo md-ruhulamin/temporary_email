@@ -32,7 +32,7 @@ class _DomainScreenState extends State<DomainScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
             Container(height: 1,color: Colors.grey,),
-          HeaderSection(heading:"Available Diomain"),
+          HeaderSection(heading:"Available Domain"),
           const SizedBox(
             height: 5,
           ),
